@@ -20,9 +20,17 @@
 
 //I choose lowercase, uppercase, numeric, and/or special characters
 
+function randInt(N){
+  /// random integer between 0 and N ( less than N, max N-1)
+  return Math.floor(Math.random()*N);
+}
 
 function generatePassword(){
-    let specials =  " !\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~"
+    let specials =  " !\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
+    let lower = "abcdefghijklmnopqrstuvwxyz";
+    let upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    let digit = "0123456789";
+    let alls = ""
     let hasSpecial = false;
     let hasLower = false;
     let hasUpper = false;
@@ -38,16 +46,73 @@ function generatePassword(){
     while ((!typeof(len)==='number')||(len<8)||(len>128)){
       len = prompt("input password length between 8 and 128");
     }
+    let password = "";
+    let beg = 0;
+    if (hasUpper){
+      alls = alls + upper;
+      password = password + upper[randInt(upper.length)];
+      console.log(alls);
+      beg = beg+1;
+    }
+    if (hasLower){
+      alls = alls + lower;
+      password = password + lower[randInt(lower.length)];
+      console.log(alls);
+      beg++;
+    }
+    if (hasNumeric){
+      alls = alls + digit;
+      password = password + digit[randInt(digit.length)];
+      console.log(alls);
+      beg++;
+    }
+    if (hasSpecial){
+      alls = alls + specials;
+      password = password + specials[randInt(specials.length)];
+      console.log(alls);
+      beg++;
+
+    }
+    console.log("===============");
+    console.log(password);
+    for (var i =beg; i <alls.length; i++ ){
+      password = password+alls[randInt(alls.length)]
+    }
+    
+
+
   /// now we have all reqs and len ready
+    /*
     let numSpecial = hasSpecial? 1 : 0;
     let numLower = hasLower? 1:0;
     let numUpper = hasUpper? 1:0;
     let numNumeric = hasNumeric? 1:0;
-
+    
     if (hasSpecial){
-
+      numSpecial = randInt(len-numLower-numUpper-numNumeric)+1;
+      console.log("special "+numSpecial);
     }
+    if (hasNumeric){
+      numNumeric = randInt(len-numSpecial-numUpper-numLower)+1;
+      console.log("digit "+numNumeric);
+    }
+    if (hasUpper){
+      numUpper = randInt(len-numSpecial-numLower-numNumeric)+1;
+      console.log("upper "+numUpper);
+    }
+    if (hasLower){
+    numLower = len-numNumeric-numSpecial-numUpper;
+    console.log("lower "+numLower);
+    }
+    else {
+      let addLen = len - numNumeric - numSpecial - numUpper;
 
+    } 
+
+    console.log("=====");
+    console.log(" total len correct ?" + (numLower+numNumeric+numSpecial+numUpper===len)); */
+
+    return password;
     
 }
 
