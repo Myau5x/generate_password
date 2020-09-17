@@ -75,10 +75,10 @@ function generatePassword(){
     }
     console.log("===============");
     console.log(password);
-    for (var i =beg; i <alls.length; i++ ){
+    for (var i =beg; i <len; i++ ){
       password = password+alls[randInt(alls.length)]
     }
-    
+
 
 
   /// now we have all reqs and len ready
