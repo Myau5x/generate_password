@@ -1,4 +1,17 @@
-# generate_password
+# Password generator
+
+Web application that generates random password.
+
+### How  it look?
+
+![screenshot](./Screenshot_gen_pass.png)
+
+### Where it deployed?
+
+[Password generator](https://myau5x.github.io/generate_password/)
+
+
+### How it work?
 
 ```
 GIVEN I need a new, secure password
@@ -15,5 +28,5 @@ THEN my input should be validated and at least one character type should be sele
 WHEN all prompts are answered
 THEN a password is generated that matches the selected criteria
 WHEN the password is generated
-THEN the password is either displayed in an alert or written to the page
+THEN the password is  written to the page
 ```

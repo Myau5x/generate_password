@@ -79,39 +79,6 @@ function generatePassword(){
       password = password+alls[randInt(alls.length)]
     }
 
-
-
-  /// now we have all reqs and len ready
-    /*
-    let numSpecial = hasSpecial? 1 : 0;
-    let numLower = hasLower? 1:0;
-    let numUpper = hasUpper? 1:0;
-    let numNumeric = hasNumeric? 1:0;
-    
-    if (hasSpecial){
-      numSpecial = randInt(len-numLower-numUpper-numNumeric)+1;
-      console.log("special "+numSpecial);
-    }
-    if (hasNumeric){
-      numNumeric = randInt(len-numSpecial-numUpper-numLower)+1;
-      console.log("digit "+numNumeric);
-    }
-    if (hasUpper){
-      numUpper = randInt(len-numSpecial-numLower-numNumeric)+1;
-      console.log("upper "+numUpper);
-    }
-    if (hasLower){
-    numLower = len-numNumeric-numSpecial-numUpper;
-    console.log("lower "+numLower);
-    }
-    else {
-      let addLen = len - numNumeric - numSpecial - numUpper;
-
-    } 
-
-    console.log("=====");
-    console.log(" total len correct ?" + (numLower+numNumeric+numSpecial+numUpper===len)); */
-
     return password;
     
 }
