@@ -30,3 +30,10 @@ THEN a password is generated that matches the selected criteria
 WHEN the password is generated
 THEN the password is  written to the page
 ```
+### files
+- `index.html` &ndash; html page
+- `ctyle.css` &ndash; styles for html
+- `script.js` &ndash; script that asks requirements and generates password
+
+### Licence
+[MIT License](https://github.com/Myau5x/generate_password/blob/master/LICENSE)
