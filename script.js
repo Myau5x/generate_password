@@ -52,7 +52,7 @@ function generatePassword(){
     if (hasUpper){
       alls = alls + upper;
       let new_letter = upper[randInt(upper.length)];
-      password = password + new_letter
+      //password = password + new_letter
       console.log(alls);
       pass_array[beg]= new_letter;
       beg = beg+1;
@@ -61,7 +61,7 @@ function generatePassword(){
     if (hasLower){
       alls = alls + lower;
       new_letter = lower[randInt(lower.length)];
-      password = password + new_letter;
+      //password = password + new_letter;
       console.log(alls);
       pass_array[beg]= new_letter;
       beg++;
@@ -69,7 +69,7 @@ function generatePassword(){
     if (hasNumeric){
       alls = alls + digit;
       new_letter = digit[randInt(digit.length)];
-      password = password + new_letter;
+      //password = password + new_letter;
       console.log(alls);
       pass_array[beg]= new_letter;
       beg++;
@@ -77,17 +77,17 @@ function generatePassword(){
     if (hasSpecial){
       alls = alls + specials;
       new_letter = specials[randInt(specials.length)];
-      password = password + new_letter;
+      //password = password + new_letter;
       console.log(alls);
       pass_array[beg]= new_letter;
       beg++;
 
     }
     console.log("===============");
-    console.log(password);
+    //console.log(password);
     for (var i =beg; i <len; i++ ){
       new_letter = alls[randInt(alls.length)]
-      password = password+ new_letter
+      //password = password+ new_letter
       pass_array[i] = new_letter
     }
     console.log(pass_array);
@@ -95,12 +95,15 @@ function generatePassword(){
     for (var i=0; i<4; i++){
       let temp = 0;
       let new_index = randInt(len);
-      console.log(i);
+     // console.log(i);
       temp = pass_array[new_index];
       pass_array[new_index]=pass_array[i]
       pass_array[i]=temp
     }
     console.log(pass_array);
+    for (var i =0; i<pass_array.length;i++){
+      password = password+pass_array[i];
+    }
 
     return password;
     
